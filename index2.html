@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Chat Page</title>
+</head>
+<body>
+
+<h1>AlaChat</h1>
+
+<textarea id="chatHistory" rows="30" cols="100" readonly></textarea><br>
+
+<input type="text" id="userInput" placeholder="Type a message">
+<button onclick="sendMessage()">Send</button>
+
+<script>
+    function updateChatHistory(message) {
+        const chatHistory = document.getElementById("chatHistory");
+        chatHistory.value += message + "\n";
+    }
+
+    async function sendMessage() {
+        const userInput = document.getElementById("userInput").value;
+        updateChatHistory("You: " + userInput);
+
+        // Make API request to ChatGPT
+        const response = await getChatGPTResponse(userInput);
+        updateChatHistory("Bot: " + response);
+
+        document.getElementById("userInput").value = ""; // Clear the input field
+    }
+
+    async function getChatGPTResponse(userInput) {
+        const apiEndpoint = "https://api.openai.com/v1/chat/completions";
+        const apiKey = "API_KEY";
+
+        const headers = {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${apiKey}`
+        };
+
+        const data = {
+            model: "gpt-3.5-turbo",
+            messages: [{ role: "user", content: userInput }],
+            max_tokens: 150
+        };
+
+        const response = await fetch(apiEndpoint, {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify(data)
+        });
+
+        const responseData = await response.json();
+        return responseData.choices[0].message.content;
+    }
+</script>
+
+</body>
+</html>

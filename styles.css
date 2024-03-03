@@ -1,0 +1,66 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5dc; /* Beige */
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #8b4513; /* Saddle Brown */
+}
+
+#chatHistory {
+    width: 72.5%;
+    height: 150px;
+    margin-bottom: 10px;
+    font-size: large;
+    padding: 10px;
+    border: 1px solid #d2b48c; /* Tan */
+    background-color: #fff8dc; /* Cornsilk */
+    overflow-y: scroll;
+}
+
+#userInput {
+    width: 68%;
+    height: 50px;
+    font-size: large;
+    padding: 8px;
+    margin-right: 5px;
+    border: 1px solid #8b4513; /* Saddle Brown */
+}
+
+button {
+    padding: 20px;
+    background-color: #8b4513; /* Saddle Brown */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #a0522d; /* Sienna */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid #8b4513; /* Saddle Brown */
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #a0522d; /* Sienna */
+}
+
+/* Optional: Adjust the styling for better responsiveness */
+@media only screen and (max-width: 600px) {
+    #userInput {
+        width: 60%;
+    }
+
+    button {
+        width: 30%;
+    }
+}

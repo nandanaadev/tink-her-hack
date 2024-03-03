@@ -1,0 +1,83 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ebe6e4;
+    background-image: url('pict'); /* Replace 'pict' with the path to your background image */
+    background-size: cover; /* Ensures the background image covers the entire viewport */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    background-position: center; /* Centers the background image */
+    color: #8b4513; /* Saddle Brown */
+}
+
+header {
+    background-color: #d2b48c; /* Tan */
+    color: white; /* Saddle Brown */
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif; /* Change font to sans-serif for ALA */
+}
+
+section {
+    padding: 20px;
+    text-align: left;
+}
+
+.resource_links {
+    display: flex;
+    align-items: center;
+}
+
+h2 {
+    color: #d2b48c; /* Tan */
+}
+
+.resource-item {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #d2b48c; /* Tan */
+    color: #8b4513; /* Saddle Brown */
+    text-align: center;
+    padding: 1px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+button {
+    padding: 20px;
+    margin-right: 15px;
+    background-color: #8b4513;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+    width: 131px;
+    vertical-align: center;
+    font-size:12px;
+}
+
+/* New styles for the left and right images */
+.left-image, .right-image {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.left-image {
+    left: 0;
+    background-position: left;
+    vertical-align: center;
+
+}
+
+.right-image {
+    right: 0;
+    background-position: right;
+    vertical-align: center;
+}
+

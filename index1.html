@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chatbot</title>
+</head>
+<body>
+
+<script>
+    function simpleChatbot() {
+        const responses = {
+            "hello": "Hi there! How can I help you?",
+            "how are you": "I'm just a computer program, but thanks for asking!",
+            "bye": "Goodbye! Have a great day!",
+            // Add more responses as needed
+        };
+
+        while (true) {
+            const user_input = prompt("You: ");
+            if (!user_input) {
+                break; // Exit the loop if the user cancels or leaves the input empty
+            }
+
+            const response = responses[user_input.toLowerCase()] || "I'm not sure how to respond to that.";
+            console.log("Bot:", response);
+        }
+    }
+
+    // Run the chatbot
+    simpleChatbot();
+</script>
+
+</body>
+</html>
